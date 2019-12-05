@@ -5,7 +5,7 @@ from random import shuffle
 
 background = Image.new("RGBA", (794, 1122), color="white")
 W, H = background.size
-columns = 10
+columns = 4
 squarewidth = int((W*.90)/columns)
 squareheight = squarewidth
 numberOfBingoItems = int(columns*columns)
