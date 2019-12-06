@@ -6,6 +6,7 @@ BingoMachine will take some images that you put in a folder on your Mac and arra
 
 # Dependencies
 PIL
+
 Python 3 of course
 
 # Usage
