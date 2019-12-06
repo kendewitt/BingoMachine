@@ -5,7 +5,9 @@ from random import shuffle
 
 background = Image.new("RGBA", (794, 1122), color="white")
 W, H = background.size
-columns = 4
+columns = int(input("How many columns do you want on your bingo cards?"))
+numberOfCards = int(input("How many bingo cards do you want?"))
+cardTitles = input("What title do you want at the top of your bingo cards?")
 squarewidth = int((W*.90)/columns)
 squareheight = squarewidth
 numberOfBingoItems = int(columns*columns)
@@ -97,11 +99,11 @@ def savecards():
     count = count + 1
 
 if __name__ == "__main__":
-    for x in range(0,10):
+    for x in range(0,numberOfCards):
         loadimages()
         shuffleimages()
         pasteimages()
         drawgrid("black")
         drawborder()
-        title("Animals Bingo")
+        title(cardTitles)
         savecards()
