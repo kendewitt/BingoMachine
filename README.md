@@ -4,10 +4,13 @@ If you teach children's English lessons in Japan, you know how much kids like bi
 
 BingoMachine will take some images that you put in a folder on your Mac and arrange them randomly on as many bingo cards as you need.
 
+# Dependencies
+PIL
+Python 3 of course
+
 # Usage
 
 1. Put the BingoMachine.py in a folder, along with another folder named "BingoItems".
 2. Download the images you need to the "BingoItems" folder.
-3. By default, the bingo cards will have 4 columns. You can change this on line 8 in the BingoMachine.py file if you want. If you set it too high and don't have enough images, expect an error.
-4. By default, it will make 10 bingo cards. You can change this on line 100 by swapping out the "10" in "for x in range(0,10):" to whatever you want.
-5. Open Terminal on your Mac, CD to the folder you put BingoMachine.py in, and run python3 BingoMachine.py (You're going to have to have Python 3 installed already, of course. And you'll have to figure that out on your own.)
+3. Open Terminal on your Mac, CD to the folder you put BingoMachine.py in, and run python3 BingoMachine.py (You're going to have to have Python 3 installed already, of course. And you'll have to figure that out on your own.)
+4. Follow the prompts in the terminal.
