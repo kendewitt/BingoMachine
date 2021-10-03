@@ -2,6 +2,7 @@ from PIL import Image, ImageDraw, ImageFont
 import os
 import math
 from random import shuffle
+import sys
 
 background = Image.new("RGBA", (794, 1122), color="white")
 W, H = background.size
@@ -47,18 +48,21 @@ def loadimages():
     return bingoitems
 
 def pasteimages():
-    draw = ImageDraw.Draw(background)
-    y = (H*.3)
-    x = (W*.05)
-    nextitem = 0
-    for j in range(0, columns+1):
-        for i in range(0, columns):
-            x1 = x+(squarewidth*i)
-            y1 = y+(squareheight*j)
+    if columns*columns > len(bingoitems):
+        sys.exit("Too many columns. Add more pictures to picture directory.")
+    else:
+        draw = ImageDraw.Draw(background)
+        y = (H*.3)
+        x = (W*.05)
+        nextitem = 0
+        for j in range(0, columns+1):
+            for i in range(0, columns):
+                x1 = x+(squarewidth*i)
+                y1 = y+(squareheight*j)
 
-            if nextitem < columns **2:
-                background.paste(bingoitems[nextitem], box=(int(x1), int(y1)), mask=None)
-                nextitem = nextitem +1
+                if nextitem < columns **2:
+                    background.paste(bingoitems[nextitem], box=(int(x1), int(y1)), mask=None)
+                    nextitem = nextitem +1
 
 
 def drawgrid(color):
