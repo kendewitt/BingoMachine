@@ -95,6 +95,10 @@ def title(title):
     w, h = draw.textsize(title, font=ImageFont.truetype("/Library/Fonts/Avenir LT 95 Black.ttf", 50))
     draw.text((((W-w)/2), ((H-h)/5)), title, font=ImageFont.truetype("/Library/Fonts/Avenir LT 95 Black.ttf", 50), fill=(0,0,0,255))
 
+def pastelogo():
+    im = Image.open("logo.png", 'r')
+    background.paste(im, box=(300, 100), mask=None)
+
 count = 1
 def savecards():
     global count
@@ -107,6 +111,7 @@ if __name__ == "__main__":
         loadimages()
         shuffleimages()
         pasteimages()
+        pastelogo()
         drawgrid("black")
         drawborder()
         title(cardTitles)
